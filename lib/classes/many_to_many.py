@@ -2,9 +2,6 @@ class Article:
     all = []
 
     def __init__(self, author, magazine, title):
-        from lib.author import Author
-        from lib.magazine import Magazine
-
         if not isinstance(author, Author):
             raise Exception("author must be an Author instance")
         if not isinstance(magazine, Magazine):
@@ -34,7 +31,6 @@ class Article:
 
     @author.setter
     def author(self, value):
-        from lib.author import Author
         if not isinstance(value, Author):
             raise Exception("author must be an Author instance")
         self._author = value
@@ -45,11 +41,9 @@ class Article:
 
     @magazine.setter
     def magazine(self, value):
-        from lib.magazine import Magazine
         if not isinstance(value, Magazine):
             raise Exception("magazine must be a Magazine instance")
         self._magazine = value
-
 
 class Author:
     def __init__(self, name):
